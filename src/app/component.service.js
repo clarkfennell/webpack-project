@@ -7,7 +7,7 @@ export class ComponentService {
   }
 
   getInputs() {
-    return [this.numberOne.value, this.numberTwoInput.value];
+    return [this.numberOneInput.value, this.numberTwoInput.value];
   }
 
   setResult(str) {

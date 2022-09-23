@@ -1,10 +1,10 @@
-import { inputsAreValid } from './utils/inputs-are-valid';
+import { inputsAreValid } from "./utils/inputs-are-valid";
 export class AlertService {
   constructor() {
-    this.errorBox = document.getElemenetById("error");
+    this.errorBox = document.getElementById("error");
   }
 
-  handleAdditionError = (inputs, numbers) => {
+  handleAdditionError(inputs, numbers) {
     const fullMessage = inputs.reduce((message, str, index) => {
       if (inputsAreValid(numbers[index])) {
         return message + "";
@@ -12,12 +12,12 @@ export class AlertService {
         return message + `${str} is not a number. `;
       }
     }, "Please enter two valid numbers! ");
-  
-    errorBox.classList.remove("invisible");
-    errorBox.innerText = fullMessage;
-  };
-  
-  hideErrors = () => {
-    errorBox.classList.add("invisible");
-  };
+
+    this.errorBox.classList.remove("invisible");
+    this.errorBox.innerText = fullMessage;
+  }
+
+  hideErrors() {
+    this.errorBox.classList.add("invisible");
+  }
 }
